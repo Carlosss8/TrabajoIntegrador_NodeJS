@@ -1,6 +1,27 @@
 {
   "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.6.1"
-  }
+  },
+  "name": "trabajointegrador_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carlosss8/TrabajoIntegrador_NodeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Carlosss8/TrabajoIntegrador_NodeJS/issues"
+  },
+  "homepage": "https://github.com/Carlosss8/TrabajoIntegrador_NodeJS#readme"
 }
