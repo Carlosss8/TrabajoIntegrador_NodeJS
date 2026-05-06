@@ -10,3 +10,5 @@ chatRouter.post('/', addChat)
 chatRouter.get('/chats/:id', searchChat)
 
 chatRouter.delete('/chats/:id', deleteChat)
+
+export { chatRouter }
