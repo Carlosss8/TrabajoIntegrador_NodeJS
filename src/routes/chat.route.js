@@ -7,6 +7,6 @@ chatRouter.get('/', getChats)
 
 chatRouter.post('/', addChat)
 
-chatRouter.get('/users/:id', searchChat)
+chatRouter.get('/chats/:id', searchChat)
 
-chatRouter.delete('/users/:id', deleteChat)
+chatRouter.delete('/chats/:id', deleteChat)
