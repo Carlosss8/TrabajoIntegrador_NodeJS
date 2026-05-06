@@ -7,10 +7,10 @@ userRouter.get('/', getUsers)
 
 userRouter.post('/', addUser)
 
-userRouter.get('/users/:id', searchUser)
+userRouter.get('/:id', searchUser)
 
-userRouter.put('/users/:id', updateUser)
+userRouter.put('/:id', updateUser)
 
-userRouter.delete('/users/:id', deleteUser)
+userRouter.delete('/:id', deleteUser)
 
 export { userRouter }
