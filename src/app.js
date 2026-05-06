@@ -11,7 +11,7 @@ server.use(express.json())
 
 server.use("/users", userRouter)
 server.use("/chats", userRouter)
-server.use("/messajes", userRouter)
+server.use("/messages", userRouter)
 
 server.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`)
