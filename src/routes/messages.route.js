@@ -3,3 +3,10 @@ import { getMessages, addMessages, updateMessages, deleteMessages } from "../con
 
 const messageRouter = Router()
 
+messageRouter.get('/', getMessages)
+
+messageRouter.post('/', addMessages)
+
+messageRouter.put('/messages/:id', updateMessages)
+
+messageRouter.delete('/messages/:id', deleteMessages)
