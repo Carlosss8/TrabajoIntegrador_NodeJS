@@ -10,3 +10,5 @@ messageRouter.post('/', addMessages)
 messageRouter.put('/messages/:id', updateMessages)
 
 messageRouter.delete('/messages/:id', deleteMessages)
+
+export { messageRouter }
