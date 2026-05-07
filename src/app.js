@@ -11,7 +11,6 @@ const port = 3000
 
 server.use(cors())
 server.use(express.json())
-server.use(errorMiddleware);
 server.get("/", (req, res) => {
     res.json({
         success: true,
@@ -23,6 +22,7 @@ server.get("/", (req, res) => {
 server.use("/users", userRouter)
 server.use("/chats", chatRouter)
 server.use("/messages", messageRouter)
+server.use(errorMiddleware);
 
 server.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`)
