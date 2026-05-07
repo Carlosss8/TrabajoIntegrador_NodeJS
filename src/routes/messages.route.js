@@ -1,9 +1,11 @@
 import { Router } from "express";
-import { getMessages, addMessages, updateMessages, deleteMessages } from "../controllers/messages.controller.js";
+import { getMessages, getMessagesByChat, addMessages, updateMessages, deleteMessages } from "../controllers/messages.controller.js";
 
 const messageRouter = Router()
 
-messageRouter.get('/', getMessages)
+messageRouter.get("/", getMessages)
+
+messageRouter.get("/chat/:chatId", getMessagesByChat)
 
 messageRouter.post('/', addMessages)
 

@@ -1,13 +1,26 @@
 import { Messages } from "../models/messages.model.js";
 
 const getMessages = async (req, res) => {
-    const messages = await Messages.find();
+    const messages = await Messages.find()
+        .populate("userId")
+        .populate("chatId");
+
+    res.json(messages);
+}
+
+const getMessagesByChat = async (req, res) => {
+    const chatId = req.params.chatId;
+
+    const messages = await Messages.find({ chatId })
+        .populate("userId")
+        .populate("chatId");
+
     res.json(messages);
 }
 
 const addMessages = async (req, res) => {
     const body = req.body;
-    await Messages.create({ name: body.messages });
+    await Messages.create({ message: body.message, chatId: body.chatId, userId: body.userId });
     res.json({ status: 'Mensaje enviado' });
 }
 
@@ -24,4 +37,4 @@ const deleteMessages = async (req, res) => {
     res.json({ status: 'Mensaje eliminado' });
 }
 
-export { getMessages, addMessages, updateMessages, deleteMessages }
+export { getMessages, getMessagesByChat, addMessages, updateMessages, deleteMessages }
