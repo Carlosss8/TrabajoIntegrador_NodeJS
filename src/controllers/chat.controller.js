@@ -1,4 +1,4 @@
-import { Chat } from "../models/chat.model";
+import { Chat } from "../models/chat.model.js";
 
 const getChats = async (req, res) => {
     const chats = await Chat.find();
@@ -7,7 +7,7 @@ const getChats = async (req, res) => {
 
 const addChat = async (req, res) => {
     const body = req.body;
-    await Chat.create({});
+    await Chat.create({ title: body.title });
     res.json({ status: 'Chat agregado' });
 }
 

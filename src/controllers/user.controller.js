@@ -6,9 +6,16 @@ const getUsers = async (req, res) => {
 }
 
 const addUser = async (req, res) => {
-    const body = req.body;
-    await User.create({ name: body.name, email: body.email });
-    res.json({ status: 'Usuario agregado' });
+    const newUser = await User.create({
+        name: body.name,
+        email: body.email
+    });
+
+    res.status(201).json({
+        success: true,
+        data: newUser,
+        message: "Usuario agregado correctamente"
+    });
 }
 
 const searchUser = async (req, res) => {
