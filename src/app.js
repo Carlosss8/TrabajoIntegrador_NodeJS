@@ -7,7 +7,7 @@ import { connectMongoDb } from "./config/connectMongoDb.js";
 import { errorMiddleware } from "./middlewares/error.middleware.js";
 
 const server = express()
-const port = 3000
+const port = process.env.PORT || 3000;
 
 server.use(cors())
 server.use(express.json())
